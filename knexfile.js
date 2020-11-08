@@ -8,5 +8,11 @@ module.exports = {
       tableName: 'dbmigrations',
     },
     seeds: { directory: './database/seeds' },
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done)
+      },
+    },
+    
   },
 };
