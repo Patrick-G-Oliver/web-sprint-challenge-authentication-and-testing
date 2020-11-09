@@ -26,11 +26,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+- Sessions (with cookies) are stateful, while JSON web tokens are not. Tokens are stored with the client, while the info needed to implment sessions is stored in the server (meaning more data sent back and forth when sessions are used). Both these differences mean that tokens are more easily implemented in large-scale applications than seesions. 
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+
+- bcrypt subjects passwords to a process known as salted hashing, in which extra pieces are added to a password (i.e. they are "salted") and then the resultant sum is hashed preventing passwords being decoded with "rainbow tables" (lists of hashed passwords generated with common hashing algorithms). It also allows for control over the number of times a password is "salted" in this manner (which combats "brute force" / trial & error attempts at deciphering that password).
 
 3. How are unit tests different from integration and end-to-end testing.
 
+- Unit tests check the functionality of individual pieces of an application (singular functions for example), while integration / end-to-end testing verifies that such individial units work together properly in the context of a give program as a whole. 
+
 4. How _Test Driven Development_ changes the way we write applications and tests.
+
+- Test driven developmemt (or, TDD), forces a developer to focus on quality and efficiency in tandem with, or even before, mere functionality when designing applications and their components given that TDD necessitates forethought over what problems could arise in the execution of units of code and (integrated) interactions bewteen units of code through the composition of tests for functional components before such components are even written. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
