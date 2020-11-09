@@ -3,15 +3,15 @@ const server = require("../api/server")
 // const db = require("../database/dbConfig")
 
 describe("user integration tests", async () => {
-    // it("registers a new user", async () => {
-    //     const res = await supertest(server)
-    //         .post("/register")
-    //         .send({ username: "fulon", password: "burralon" })
-    //     expect(res.statusCode).toBe(201)
-    //     expect(res.type).toBe("application/json")
-    //     expect(res.body.username).toBe("fulon")
-    //     expect(res.body.id).toBeDefined()
-    // })
+    it("registers a new user", async () => {
+        const res = await supertest(server)
+            .post("/register")
+            .send({ username: "fulon", password: "burralon" })
+        expect(res.statusCode).toBe(201)
+        expect(res.type).toBe("application/json")
+        expect(res.body.username).toBe("fulon")
+        expect(res.body.id).toBeDefined()
+    })
 
     it("throws an error if username is already taken", async () => {
         const res = await supertest(server)
@@ -33,7 +33,5 @@ describe("user integration tests", async () => {
             .send({ username: "fulanito", password: "detalloto" })
         expect(res.statusCode).toBe(401)
     })
-    // const { username, password } = req.body
-    // const user = await Users.findBy({ username }).first()
 
 })
